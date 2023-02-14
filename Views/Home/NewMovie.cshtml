@@ -1,0 +1,62 @@
+﻿@{ ViewData["Title"] = "New Movie";
+}
+
+@model Mission6_mitch921.Models.MovieEntry
+<h1>Add a New Movie to the Collection!</h1>
+
+<div>
+    <form method="post">
+        <label asp-for="Title">Movie Title</label>
+        <input asp-for="Title" /> <br />
+
+        <label asp-for="Category">Category</label>
+        <select asp-for="Category">
+            <option value="actionAdventure">Action/Adventure</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+            <option value="family">Family</option>
+            <option value="horrorSuspense">Horror/Suspense</option>
+            <option value="television">Television</option>
+            <option value="vhs">VHS</option>
+            <option value="misc">Miscellaneous</option>
+        </select><br />
+
+        <label asp-for="Year">Year of Release</label>
+        <input asp-for="Year" /><br />
+
+        <label asp-for="Director">Name of Director</label>
+        <input asp-for="Director" /><br />
+
+        <label asp-for="Rating">Content Rating</label>
+        <select asp-for="Rating">
+            <option value="g">G</option>
+            <option value="pg">PG</option>
+            <option value="pg13">PG-13</option>
+            <option value="r">R</option>
+            <option value="nc17">NC-17</option>
+            <option value="nr">NR</option>
+            <option value="ur">UR</option>
+            <option value="tv14">TV-14</option>
+            <option value="tvpg">TV-PG</option>
+            <option value="tvy7">TV-Y7</option>
+            <option value="tvma">TV-MA</option>
+            <option value="other">Other</option>
+        </select><br />
+
+        <label asp-for="Edited">Edited?</label>
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select><br />
+
+        <label asp-for="LentTo">Lent To...</label>
+        <input asp-for="LentTo" /><br />
+
+        <label asp-for="Notes">Notes</label>
+        <input asp-for="Notes" /><br />
+
+        <button type="submit">Add Movie</button>
+
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>
