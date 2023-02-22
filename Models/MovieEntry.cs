@@ -14,8 +14,6 @@ namespace Mission6_mitch921.Models
         [Required]
         public string Title { get; set; }
 
-        [Required]
-        public string Category { get; set; }
 
         [Required]
         public short Year { get; set; }
@@ -31,5 +29,10 @@ namespace Mission6_mitch921.Models
 
         [MaxLength(25)]
         public string Notes { get; set; }
+
+
+        [Required(ErrorMessage = "You must select a category")]
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
     }
 }

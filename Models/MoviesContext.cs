@@ -14,20 +14,32 @@ namespace Mission6_mitch921.Models
             //leave blank for now
         }
         
-        public DbSet<MovieEntry> movies { get; set; }
+        public DbSet<MovieEntry> Movies { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
+            mb.Entity<Category>().HasData(
+                new Category { CategoryID = 1, CategoryName = "Action/Adventure" },
+                new Category { CategoryID = 2, CategoryName = "Drama" },
+                new Category { CategoryID = 3, CategoryName = "Comedy" },
+                new Category { CategoryID = 4, CategoryName = "Family" },
+                new Category { CategoryID = 5, CategoryName = "Horror/Suspense" },
+                new Category { CategoryID = 6, CategoryName = "Television" },
+                new Category { CategoryID = 7, CategoryName = "VHS" },
+                new Category { CategoryID = 8, CategoryName = "Miscellaneous" }
+            );
+
             mb.Entity<MovieEntry>().HasData(
 
                 new MovieEntry
                 {
                     MovieID = 1,
                     Title = "Casino Royale",
-                    Category = "actionAdventure",
+                    CategoryID = 1,
                     Year = 2006,
                     Director = "Martin Campbell",
-                    Rating = "pg13",
+                    Rating = "PG-13",
                     Edited = false
                 },
 
@@ -35,10 +47,10 @@ namespace Mission6_mitch921.Models
                 {
                     MovieID = 2,
                     Title = "The Prestige",
-                    Category = "drama",
+                    CategoryID = 2,
                     Year = 2006,
                     Director = "Christopher Nolan",
-                    Rating = "pg13",
+                    Rating = "PG-13",
                     Edited = false
                 },
 
@@ -46,10 +58,10 @@ namespace Mission6_mitch921.Models
                 {
                     MovieID = 3,
                     Title = "Titanic",
-                    Category = "drama",
+                    CategoryID = 2,
                     Year = 1997,
                     Director = "James Cameron",
-                    Rating = "pg13",
+                    Rating = "PG-13",
                     Edited = false
                 }
             );
